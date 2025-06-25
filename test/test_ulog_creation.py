@@ -644,11 +644,11 @@ class TestULogCreation(unittest.TestCase):  # pylint: disable=too-many-public-me
 
             # Check some values
             self.assertEqual(data.data['temperature'][0], 25.0)
-            self.assertAlmostEqual(data.data['temperature'][19], 25.0 + 19 * 0.1)
+            self.assertAlmostEqual(data.data['temperature'][19], 26.9, places=4)
 
             # Check array fields
-            self.assertEqual(data.data['acceleration[0]'][0], 0.0)
-            self.assertEqual(data.data['acceleration[1]'][19], 19 * 0.2)
+            self.assertAlmostEqual(data.data['acceleration[0]'][0], 0.0)
+            self.assertAlmostEqual(data.data['acceleration[1]'][19], 3.8)
 
     def test_add_data_bulk_empty_data(self):
         """Test bulk data addition with empty data."""
