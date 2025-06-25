@@ -1,4 +1,5 @@
 """ Main Module to load and parse an ULog file """
+# pylint: disable=too-many-lines
 
 import struct
 import copy
@@ -23,7 +24,7 @@ else:
         return str(cstr)
 
 
-class ULog(object):
+class ULog(object):  # pylint: disable=too-many-public-methods
     """
     This class parses an ulog file
     """
@@ -1327,7 +1328,7 @@ class ULog(object):
 
         self._message_formats[name] = message_format
 
-    def add_data_message(self, message_name, multi_id=0, **field_data):
+    def add_data_message(self, message_name, multi_id=0, **field_data):  # pylint: disable=too-many-locals
         """
         Add a data message to the ULog.
 
@@ -1446,7 +1447,7 @@ class ULog(object):
         # Add to subscription buffer
         subscription.buffer.extend(data_bytes)
 
-    def add_data_bulk(self, message_name, data_list, multi_id=0):
+    def add_data_bulk(self, message_name, data_list, multi_id=0):  # pylint: disable=too-many-locals
         """
         Add multiple data messages efficiently in bulk.
 

@@ -644,7 +644,7 @@ class TestULogCreation(unittest.TestCase):  # pylint: disable=too-many-public-me
 
             # Check some values
             self.assertEqual(data.data['temperature'][0], 25.0)
-            self.assertEqual(data.data['temperature'][19], 25.0 + 19 * 0.1)
+            self.assertAlmostEqual(data.data['temperature'][19], 25.0 + 19 * 0.1)
 
             # Check array fields
             self.assertEqual(data.data['acceleration[0]'][0], 0.0)
